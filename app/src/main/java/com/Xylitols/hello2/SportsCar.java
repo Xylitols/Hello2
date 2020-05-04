@@ -29,4 +29,9 @@ public class SportsCar extends Car {
         }
     }
 
+    // 부모에게 받은 기능을 그대로 쓰지 ㅇ낳고 재정의 해서 쓰는 것을 오버라이드라고 한다.
+    @Override
+    public String getCurrentSpeedText() {
+        return "스포츠카입니다." + super.getCurrentSpeedText();
+    }
 }
