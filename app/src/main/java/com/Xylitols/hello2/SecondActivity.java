@@ -10,7 +10,7 @@ public class SecondActivity extends AppCompatActivity {
 
     Car car1 = new Car(3, 100, 4);
 
-    Car car2 = new Car(10, 50, 8);
+    SportsCar car2 = new SportsCar(10, 50, 8);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,10 @@ public class SecondActivity extends AppCompatActivity {
                 car2.accelerationPedal();
                 String info = "car1: " + car1.getCurrentSpeedText() + ", car2:" + car2.getCurrentSpeedText();
                 Toast.makeText(getApplicationContext(), info, Toast.LENGTH_SHORT).show();
+
+                // 스포츠카의 선루프를 연다.
+                car2.openSunroof();
+                Toast.makeText(getApplicationContext(), car2.getSunnnRoofInfo(), Toast.LENGTH_SHORT).show();
             }
         });
         findViewById(R.id.testButton2).setOnClickListener(new View.OnClickListener() {
@@ -38,7 +42,12 @@ public class SecondActivity extends AppCompatActivity {
                 car2.brakePedal();
                 String info = "car1: " + car1.getCurrentSpeedText() + ", car2:" + car2.getCurrentSpeedText();
                 Toast.makeText(getApplicationContext(), info, Toast.LENGTH_SHORT).show();
+
+                // 스포츠카의 선루프를 닫는다.
+                car2.closeSunroof();
+                Toast.makeText(getApplicationContext(), car2.getSunnnRoofInfo(), Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }
